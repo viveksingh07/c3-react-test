@@ -1,0 +1,80 @@
+.pearson-heading-container {
+  margin:0 auto;
+  margin-top:50px;
+  height: 100px;
+  width:80%;
+}
+
+.pearson-heading-container h1 {
+  color: #007FA3;
+  font-size: 36px;
+  margin:0;
+  padding:0;
+  height:0;
+}
+
+.pearson-heading-container button {
+  float: right;
+  padding: 10px;
+  border-radius: 5px;
+  background-color:#007FA3;
+  outline:none;
+  border:none;
+  color:#fff;
+  font-size:14px;
+  cursor: pointer;
+}
+
+.user-profiles-container {
+  width: 80%;
+  margin: 0 auto;
+  max-height: 650px;
+  overflow-y: auto;
+  background-color: #D8D8D8;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 5px;
+}
+
+.profile-card {
+  position: relative;
+  margin: 38px;
+}
+
+.avatar-container {
+  width: 80px;
+  position: absolute;
+  top:-30px;
+  left:32%;
+}
+
+.avatar-container img {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+}
+
+.profile-card-body {
+  width: 212px;
+  height: 112px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.profile-name-container {
+  position: absolute;
+  top: 50%;
+  font-size: 18px;
+  color: #E93939;
+  width: 100%;
+  text-align: center;
+}
+
+.delete-profile-link {
+  position: absolute;
+  top: 80%;
+  left: 10px;
+  font-size: 14px;
+  color: #007FA3;
+  cursor: pointer;
+}
