@@ -4,7 +4,10 @@ import { shallow } from 'enzyme';
 import { PearsonUsers } from './PearsonUsers';
 import { userProfilesList } from '../data/fixtures';
 
-const props = { userProfilesList };
+const props = {
+  userProfilesList,
+  addMoreProfiles: jest.fn()
+ };
 
 describe('PearsonUsers', () => {
 
@@ -22,6 +25,18 @@ describe('PearsonUsers', () => {
 
     it('and has expected text value', () => {
       expect(pearsonUsers.find('button').text()).toEqual('Fetch Profiles');
+    });
+
+    describe('is clicked', () => {
+
+      beforeEach( () => {
+        pearsonUsers.find('button').simulate('click');
+      });
+
+      it('and fetch profiles button calls action', () => {
+        expect(props.addMoreProfiles).toHaveBeenCalledTimes(1);
+      });
+
     });
 
   });

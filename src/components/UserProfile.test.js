@@ -4,11 +4,14 @@ import { shallow } from 'enzyme';
 import { UserProfile } from './UserProfile';
 import { user } from '../data/fixtures';
 
-const props = { user };
+const props = {
+  user,
+  deleteUserProfile: jest.fn()
+};
 
 describe('UserProfile', () => {
   const userProfile = shallow(<UserProfile { ...props }/>);
-  
+
   it('renders the image', () => {
       expect(userProfile.find('img').exists()).toBe(true);
   });
@@ -31,6 +34,18 @@ describe('UserProfile', () => {
 
   it('and delete link span has correct value', () => {
     expect(userProfile.find('span').at(1).text()).toEqual('Delete');
+  });
+
+  describe('and delete link is clicked', () => {
+
+    beforeEach( () => {
+      userProfile.find('span').at(1).simulate('click');
+    });
+
+    it('and delete link calls action', () => {
+      expect(props.deleteUserProfile).toHaveBeenCalledTimes(1);
+    });
+
   });
 
 });
